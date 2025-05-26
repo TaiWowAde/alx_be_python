@@ -1,14 +1,11 @@
-def get_weather_advice(weather: str) -> str:
-    weather = weather.lower()
-    if weather == "sunny":
-        return "Wear a t-shirt and sunglasses."
-    elif weather == "rainy":
-        return "Don't forget your umbrella and a raincoat."
-    elif weather == "cold":
-        return "Make sure to wear a warm coat and a scarf."
-    else:
-        return "Sorry, I don't have recommendations for this weather."
+weather = input("What's the weather like today? (sunny/rainy/cold): ").lower()
 
-if __name__ == "__main__":
-    user_input = input("What's the weather like today? (sunny/rainy/cold): ")
-    print(get_weather_advice(user_input))
+if weather == "sunny":
+    print("Wear a t-shirt and sunglasses.")
+elif weather == "rainy":
+    print("Don't forget your umbrella and a raincoat.")
+elif weather == "cold":
+    print("Make sure to wear a warm coat and a scarf.")
+else:
+    print("Sorry, I don't have recommendations for this weather.")
+
