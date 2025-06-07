@@ -1,12 +1,11 @@
 
-
 def main():
-    # User input prompts
-    task = input("Enter your task: ").strip()
-    priority = input("Priority (high/medium/low): ").strip().lower()
-    time_bound = input("Is it time-bound? (yes/no): ").strip().lower()
+    # Prompt for a single task
+    task = input("Enter your task: ")
+    priority = input("Priority (high/medium/low): ").lower()
+    time_bound = input("Is it time-bound? (yes/no): ").lower()
 
-    # Start of match-case block (Python 3.10+)
+    # Match Case to process priority
     match priority:
         case "high":
             message = f"Reminder: '{task}' is a high priority task"
@@ -15,15 +14,16 @@ def main():
         case "low":
             message = f"Note: '{task}' is a low priority task"
         case _:
-            message = f"Note: '{task}' has an unknown priority level"
+            message = f"Note: '{task}' has an unknown priority"
 
-    # Check time-bound condition
+    # Use if to modify message if time-bound
     if time_bound == "yes":
         message += " that requires immediate attention today!"
     else:
         message += ". Consider completing it when you have free time."
 
-    # Final output
+    # Print final message
     print("\n" + message)
 
-
+if __name__ == "__main__":
+    main()
