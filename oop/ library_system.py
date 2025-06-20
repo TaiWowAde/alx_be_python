@@ -1,3 +1,5 @@
+# library_system.py
+
 class Book:
     def __init__(self, title, author):
         if not isinstance(title, str):
@@ -8,7 +10,8 @@ class Book:
         self.author = author
 
     def __str__(self):
-        return f"{self.title} by {self.author}"
+        # NOTE the required "Book: " prefix
+        return f"Book: {self.title} by {self.author}"
 
 class EBook(Book):
     def __init__(self, title, author, file_size):
@@ -36,9 +39,9 @@ class Library:
 
     def add_book(self, book):
         if not isinstance(book, Book):
-            raise TypeError("book must be an instance of Book or its subclasses")
+            raise TypeError("book must be a Book or subclass instance")
         self.books.append(book)
 
     def list_books(self):
         for book in self.books:
-            print(str(book))
+            print(book)    # uses each class’s __str__
