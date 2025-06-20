@@ -1,23 +1,30 @@
+# oop/main.py
 
+import sys
+import os
 
-from  library_system import Book, EBook, PrintBook, Library
+# Ensure the directory containing this file is on sys.path
+sys.path.insert(0, os.path.dirname(__file__))
+
+from library_system import Book, EBook, PrintBook, Library
 
 def main():
-    # Instantiate the library
+    # Create a Library instance
     my_library = Library()
 
-    # Create one of each book type
-    classic_book   = Book("Pride and Prejudice", "Jane Austen")
-    digital_novel  = EBook("Snow Crash", "Neal Stephenson", 500)
-    paper_novel    = PrintBook("The Catcher in the Rye", "J.D. Salinger", 234)
+    # Create instances of each type of book
+    classic_book  = Book("Pride and Prejudice", "Jane Austen")
+    digital_novel = EBook("Snow Crash", "Neal Stephenson", 500)
+    paper_novel   = PrintBook("The Catcher in the Rye", "J.D. Salinger", 234)
 
-    # Add them to the library
+    # Add books to the library
     my_library.add_book(classic_book)
     my_library.add_book(digital_novel)
     my_library.add_book(paper_novel)
 
-    # List all books
+    # List all books in the library
     my_library.list_books()
 
 if __name__ == "__main__":
     main()
+
